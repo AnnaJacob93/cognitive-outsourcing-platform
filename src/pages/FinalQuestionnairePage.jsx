@@ -1,0 +1,6 @@
+import {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
+import PageCard from '../components/PageCard'
+import {useStudy} from '../context/StudyContext'
+export default function FinalQuestionnairePage(){const n=useNavigate(),{studyData,updateStudyData}=useStudy();const[f,setF]=useState(studyData.finalQuestionnaire);const u=e=>setF(x=>({...x,[e.target.name]:e.target.value}));const opts=['Strongly disagree','Disagree','Neither agree nor disagree','Agree','Strongly agree'];return <PageCard title='Final questionnaire'><div className='form-grid'>{[['trustInAi','I generally trust AI-generated recommendations.'],['aiDependence','I often rely on AI to complete tasks that I could otherwise do myself.']].map(([name,label])=><label key={name}>{label}<select name={name} value={f[name]} onChange={u}><option value=''>Select</option>{opts.map((o,j)=><option key={o} value={j+1}>{o}</option>)}</select></label>)}<label>Optional comments<textarea name='comments' rows='5' value={f.comments} onChange={u}/></label></div><div className='actions'><button className='button primary' disabled={!f.trustInAi||!f.aiDependence} onClick={()=>{updateStudyData({finalQuestionnaire:f});n('/debrief')}}>Continue to debrief</button></div></PageCard>}
+

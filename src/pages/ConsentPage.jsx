@@ -1,0 +1,6 @@
+import {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
+import PageCard from '../components/PageCard'
+import {useStudy} from '../context/StudyContext'
+export default function ConsentPage(){const n=useNavigate(),{updateStudyData}=useStudy();const[c,setC]=useState({read:false,voluntary:false,adult:false,anonymous:false});const all=Object.values(c).every(Boolean);const t=k=>setC(x=>({...x,[k]:!x[k]}));return <PageCard title='Consent'><div className='checkbox-list'><label><input type='checkbox' checked={c.read} onChange={()=>t('read')}/> I have read and understood the participant information.</label><label><input type='checkbox' checked={c.voluntary} onChange={()=>t('voluntary')}/> I understand that participation is voluntary.</label><label><input type='checkbox' checked={c.adult} onChange={()=>t('adult')}/> I confirm that I am aged 18 or over.</label><label><input type='checkbox' checked={c.anonymous} onChange={()=>t('anonymous')}/> I agree that my anonymous responses may be used for this research.</label></div><div className='actions split'><button className='button secondary' onClick={()=>n('/study-information')}>Back</button><button className='button primary' disabled={!all} onClick={()=>{updateStudyData({consent:true});n('/initial-questionnaire')}}>I agree and wish to continue</button></div></PageCard>}
+

@@ -1,0 +1,4 @@
+import {useNavigate} from 'react-router-dom'
+import PageCard from '../components/PageCard'
+export default function InstructionsPage(){const n=useNavigate();return <PageCard title='Task instructions'><ol className='instruction-list'><li>Read each scenario carefully and choose your initial answer independently.</li><li>Rate how confident you are.</li><li>Review the predefined AI recommendation.</li><li>You may choose to view the AI explanation.</li><li>Make your final decision and provide a short justification.</li></ol><div className='warning-box'>Once the AI recommendation is displayed, you cannot change your recorded initial answer.</div><div className='actions split'><button className='button secondary' onClick={()=>n('/initial-questionnaire')}>Back</button><button className='button primary' onClick={()=>n('/tasks/0')}>Begin tasks</button></div></PageCard>}
+

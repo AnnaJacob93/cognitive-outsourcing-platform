@@ -1,0 +1,2 @@
+export default function ConfidenceScale({name,value,onChange,label}){return <fieldset className='field-group'><legend>{label}</legend><div className='confidence-grid'>{[1,2,3,4,5].map(n=><label key={n} className={`confidence-option ${Number(value)===n?'selected':''}`}><input type='radio' name={name} value={n} checked={Number(value)===n} onChange={e=>onChange(Number(e.target.value))}/><span>{n}</span></label>)}</div><div className='scale-labels'><span>Not confident</span><span>Very confident</span></div></fieldset>}
+

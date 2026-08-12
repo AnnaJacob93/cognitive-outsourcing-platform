@@ -1,0 +1,4 @@
+import {useNavigate} from 'react-router-dom'
+import PageCard from '../components/PageCard'
+export default function StudyInformationPage(){const n=useNavigate();return <PageCard title='Participant information'><div className='content-stack'><p>This study investigates how people evaluate AI recommendations and whether AI assistance can sometimes replace independent reasoning.</p><p>You will complete short reasoning tasks, provide an initial answer, review a predefined AI recommendation and then make a final decision.</p><p>Some AI recommendations may be correct, incorrect or partially correct. This is necessary for the research and will be explained fully at the end.</p><p>Participation is voluntary. You may leave before submitting your final responses.</p></div><div className='actions split'><button className='button secondary' onClick={()=>n('/')}>Back</button><button className='button primary' onClick={()=>n('/consent')}>Continue</button></div></PageCard>}
+

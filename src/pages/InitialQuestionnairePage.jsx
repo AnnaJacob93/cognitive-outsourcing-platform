@@ -1,0 +1,7 @@
+import {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
+import PageCard from '../components/PageCard'
+import {useStudy} from '../context/StudyContext'
+export default function InitialQuestionnairePage(){const n=useNavigate(),{studyData,updateStudyData}=useStudy();const[f,setF]=useState(studyData.demographics);const u=e=>setF(x=>({...x,[e.target.name]:e.target.value}));const ok=Object.values(f).every(Boolean);return <PageCard title='About you' intro='Please provide general information only. Do not enter your name or contact details.'><div className='form-grid'>{[['ageGroup','Age group',['18–24','25–34','35–44','45–54','55+']],['educationLevel','Highest education level',['Secondary education','College or equivalent','Undergraduate degree','Postgraduate degree','Other']],['aiUseFrequency','How often do you use generative AI?',['Never','Less than monthly','Monthly','Weekly','Daily']],['selfRatedAiLiteracy','How would you rate your AI literacy?',['Very low','Low','Moderate','High','Very high']]].map(([name,label,opts])=><label key={name}>{label}<select name={name} value={f[name]} onChange={u}><option value=''>Select</option>{opts.map(o=><option key={o}>{o}</option>)}</select></label>)}</div><div className='actions split'><button className='button secondary' onClick={()=>n('/consent')}>Back</button><button className='button primary' disabled={!ok} onClick={()=>{updateStudyData({demographics:f});n('/instructions')}}>Continue</button></div></PageCard>}
+
+
