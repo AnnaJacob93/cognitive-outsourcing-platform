@@ -1,22 +1,22 @@
 # Cognitive Outsourcing Platform
 
-Starter React/Vite application for the dissertation project.
+Research platform built for a BSc dissertation study on cognitive outsourcing in human-AI decision-making. Deployed at [cognitive-outsourcing-platform.vercel.app](https://cognitive-outsourcing-platform.vercel.app).
 
-## Included
-- Complete participant flow and routing
-- Welcome, information, consent, demographics, instructions, task, questionnaire, debrief and completion screens
-- Shared study state using React Context
-- One working sample reasoning task
-- Initial/final answers and confidence ratings
-- Optional “View AI Explanation” behaviour
-- Responsive styling
-- Placeholder service for later Firestore integration
+Participants complete seven short reasoning tasks, each showing a predefined AI recommendation (correct, incorrect, or partially correct) before they give a final answer. Responses are stored anonymously in Firestore.
+
+## Structure
+
+- `src/` — the React/Vite application (participant flow, tasks, questionnaire, Firestore integration)
+- `analysis/` — data analysis materials:
+  - `export-firestore.js` — exports participant data from Firestore to CSV/JSON (requires a local service account key, not included)
+  - `data_analysis_colab.py` — the Google Colab analysis script (statistical tests, figures)
+- `firestore.rules` — Firestore security rules
 
 ## Run
+
 ```bash
 npm install
 npm run dev
 ```
 
-Review task content, questionnaire items and ethics wording before using the application with participants.
-
+The raw dataset and processed dataset are not included in this repository and are available on request.
