@@ -6,11 +6,12 @@ Participants complete seven short reasoning tasks, each showing a predefined AI 
 
 ## Structure
 
-- `src/` — the React/Vite application (participant flow, tasks, questionnaire, Firestore integration)
-- `analysis/` — data analysis materials:
-  - `export-firestore.js` — exports participant data from Firestore to CSV/JSON (requires a local service account key, not included)
-  - `data_analysis_colab.py` — the Google Colab analysis script (statistical tests, figures)
-  - `firestore.rules` — Firestore security rules
+- `src/` - the React/Vite application (participant flow, tasks, questionnaire, Firestore integration)
+- `analysis/` - data analysis materials:
+  - `export-firestore.js` - exports participant data from Firestore to CSV/JSON (requires a local service account key, not included)
+  - `data_analysis_colab.py` - the Google Colab analysis script (statistical tests, figures)
+  - `firestore.rules` - Firestore security rules
+  - data_analysis_colab.ipynb - the same analysis as a notebook, with charts included (outputs cleared of participant data)
 
 ## Run
 
