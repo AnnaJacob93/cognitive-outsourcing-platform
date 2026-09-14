@@ -10,7 +10,7 @@ Participants complete seven short reasoning tasks, each showing a predefined AI 
 - `analysis/` — data analysis materials:
   - `export-firestore.js` — exports participant data from Firestore to CSV/JSON (requires a local service account key, not included)
   - `data_analysis_colab.py` — the Google Colab analysis script (statistical tests, figures)
-- `firestore.rules` — Firestore security rules
+  - `firestore.rules` — Firestore security rules
 
 ## Run
 
