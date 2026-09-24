@@ -19,4 +19,4 @@ npm install
 npm run dev
 ```
 
-The raw dataset and processed dataset are not included in this repository and are available on request.
+The raw and processed datasets are not included in this repository. They are included in the ZIP file submitted through the Solent submission link.
